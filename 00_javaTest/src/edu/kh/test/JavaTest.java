@@ -18,5 +18,6 @@ public class JavaTest {
        System.out.println(12+100+500);//뀨뀨규끵
        
        System.out.println("git 너무어렵다");
+       System.out.println("git 일반버전도 해야하는데");
     }
 }
