@@ -16,5 +16,7 @@ public class JavaTest {
        System.out.println("I want to go home");
        
        System.out.println(12+100+500);//뀨뀨규끵
+       
+       System.out.println("git 너무어렵다");
     }
 }
