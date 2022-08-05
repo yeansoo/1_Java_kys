@@ -44,9 +44,8 @@ public class VariableExample5 {
 		
 		
 		
-		System.out.println("내가 추가한 내용");
-		
-		System.out.println("내가 추가한 내용 22");
+		//주석
+		System.out.println("새로운 코드지롱");
 		
 		
 		
