@@ -13,7 +13,10 @@ public class ConditionRun {
 //				ex.test2();
 				
 				
-				ex.ex2();
+				//ex.ex5();
 				
+					SwitchExample switchEx=new SwitchExample();
+					
+					switchEx.ex5();
 			}
 }
