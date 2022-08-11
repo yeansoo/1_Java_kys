@@ -5,7 +5,7 @@ package edu.kh.control.loop;
 public class LoopRun {
 	public static void main(String[] args) {
 		ForExample forEx=new ForExample();
-		
+		WhileExample whileEx=new WhileExample();
 		
 //		forEx.ex1();
 //		forEx.ex2();
@@ -24,6 +24,10 @@ public class LoopRun {
 //		forEx.ex15();
 //		forEx.ex16();
 //		forEx.ex17();
-		forEx.ex18();
+//		forEx.ex18();
+		
+//		whileEx.ex1();
+//		whileEx.ex2();
+		whileEx.ex3();
 	}
 }

@@ -4,7 +4,7 @@ public class LoopPracticeRun {
 		public static void main(String[] args) {
 			
 			LoopPractice lp=new LoopPractice();
-			lp.practice9();
+			lp.practice11();
 		}
 }
 

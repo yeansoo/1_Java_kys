@@ -59,6 +59,22 @@ public class LoopPractice {
 				System.out.println("1 이상의 숫자를 입력해주세요.");
 			}
 			else {
+				/* 풀어주신 방법
+				 * if(input1<input2)
+				 * for(int i=input1;input1<=input2;input1++)
+				 * 
+				 * else
+				 * for(int i=input2;input2<=input2;input2++)
+				 * 
+				 * 
+				 * int start=input1;
+				 * int end=input2;
+				 * 
+				 * if(input1>input2)
+				 * start=input2;
+				 * end=input1;
+				 * 
+				 */
 				if(input1<input2) {//만약 두번째 숫자가 첫번째숫자보다 크다면
 					int temp=input2;
 					input2=input1;
@@ -130,20 +146,30 @@ public class LoopPractice {
 			
 			System.out.print("정수 입력 : ");
 			int input=sc.nextInt();
+			
+		/*
+		 * for(int row=1;row<=input;row++){
+		 * 	for(int col=1;col<=row;col++){
+		 * 	
+		 * 	}
+		 * }
+		 */
 			for(int i=0;i<input;i++) {
+
 //				for(int j=input-1;j>=0;j--) {
 //					if(j<=i)
 //						System.out.print("*");
 //					else
 //						System.out.print(" ");
 //				}
+				
+				
 				for(int j=input-1;j>i;j--) {
 					System.out.print(" ");
 				}
 				for(int j=0;j<=i;j++) {
 					System.out.print("*");
 				}
-				
 				
 				System.out.println();
 			}
@@ -185,20 +211,58 @@ public class LoopPractice {
 			}
 		}
 		
+		public void practice10_1() {
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.print("정수 입력 : ");
+			int input=sc.nextInt();
+			
+			// 위쪽 삼각형
+			for(int row=1;row<=input;row++) {
+				for(int col=1;col<=row;col++) {
+					System.out.print("*");
+				}
+				System.out.println();
+			}
+			//아래쪽 삼각형
+			for(int row=input-1;row>=1;row--) {
+				for(int col=1;col<=row;col++) {
+					System.out.print("*");
+				}
+				System.out.println();
+			}
+		
+		}
+
 		public void practice11() {
 			Scanner sc = new Scanner(System.in);
 			
 			System.out.print("정수 입력 : ");
 			int input=sc.nextInt();
 			
-			for(int i=0;i<input;i++) {// 줄 수
-				for(int j=input-1;j>i;j--) {
-					System.out.print(" ");
+			// for문을 이용한 풀이
+//			for(int i=1;i<=input;i++) {// 줄 수
+//				for(int j=input;j>i;j--) { // 출력 되는 공백의 수
+//					System.out.print(" ");
+//				}
+//				for(int l=1;l<=i*2-1;l++)// 출력 되는 별의 수
+//					System.out.print("*");
+//				System.out.println();
+//			}
+			
+			// if문을 이용한 풀이
+			for(int row=1;row<=input;row++) {//줄수
+				for(int col=1;col<=input*2-1;col++) {//열수
+					if(input-row>=col||input+row<=col) {
+						System.out.print(" ");
+					}
+					else{
+						System.out.print("*");
+					}
 				}
-				for(int l=0;l<(i+1)*2-1;l++)
-					System.out.print("*");
 				System.out.println();
 			}
+			
 		}
 		
 		public void practice12() {
