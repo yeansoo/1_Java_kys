@@ -4,6 +4,6 @@ public class ArrayRun {
 	public static void main(String[] args) {
 		ArrayExample arrayEx=new ArrayExample();
 		
-		arrayEx.ex1();
+		arrayEx.ex11();
 	}
 }

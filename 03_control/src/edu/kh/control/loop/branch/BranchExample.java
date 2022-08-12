@@ -141,4 +141,136 @@ public class BranchExample {
 		}
 		System.out.println("정답입니다! (총 입력 횟수 : "+count+"회");
 	}
+	
+	
+	public void rpsGame() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("몇판? : ");
+		int round=sc.nextInt();// 판수 입력
+		
+		int win=0,lose=0,mid=0;
+		
+		String[] strrps=new String[3];
+		strrps[0]="가위";
+		strrps[1]="바위";
+		strrps[2]="보";// 0가위 1바위 2보
+		int input=-1;
+		for(int i=1;i<=round;i++) {
+			
+			
+			System.out.println(i+"번째 게임");
+			
+			
+			int rps=(int)(Math.random()*3);// 랜덤 가위바위보 결정
+			
+			
+			
+				System.out.print("가위/바위/보 중 하나를 입력해주세요 : ");
+				
+				
+				String inputrps=sc.next();// 사용자 입력 inputrps
+//			for(int x=0;x<3;x++)
+//			{
+//				if(inputrps.equals(strrps[i]))//비교
+//					{
+//					input=i;
+//					}
+//				else {
+//					System.out.println("잘못 입력하셨습니다.");//잘못입력했으면 앞으로 돌아가야하는데
+//					i--;
+//					
+//				}
+//			}
+//			
+			System.out.println("컴퓨터는 ["+strrps[rps]+"]를 선택했습니다.");
+			
+			// 사용자가 입력한 가위바위보 숫자로 변환
+			if(inputrps.equals("가위"))
+				input=0;
+			if(inputrps.equals("바위"))
+				input=1;
+			if(inputrps.equals("보"))
+				input=2;
+			
+			System.out.println(input +" "+ rps);
+			
+			if(input==rps){//비교 후 출력
+				System.out.println("비겼습니다.");
+				mid++;
+			}
+			else if(input < rps || input==2&&rps==0 ) { 
+				System.out.println("졌습니다ㅠㅠ");
+				lose++;
+			}
+			else if(input>rps|| input==0&&rps==2){
+				System.out.println("플레이어 승!");
+				win++;
+			}
+			
+			System.out.printf("현재 기록 : %d승 %d무 %d패\n\n",win, mid,lose);
+				
+			
+			
+			
+		}
+	}
+	
+	public void rpsGame_ex() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("몇판? : ");
+		int round=sc.nextInt();// 판수 입력
+		
+		int win=0,lose=0,draw=0;
+		
+		
+		for(int i=1;i<=round;i++) {
+			System.out.println(i+"번째 게임");
+			
+			System.out.print("가위/바위/보 중 하나를 입력해주세요 : ");
+		
+			String player=sc.next();
+
+			int rps=(int)(Math.random()*3);// 랜덤 가위바위보 결정
+			
+			
+			// String s1=null;	- 참조x
+			// String s2=""; 	- 빈문자열 
+			String com=null;
+			switch(rps) {
+			case 0:
+				com="가위";break;
+			case 1:
+				com="바위";break;
+			case 2: 
+				com="보";break;
+			}
+			
+			System.out.println("컴퓨터는 ["+com+"]를 선택했습니다.");
+			
+			
+			if(player.equals(com)) {
+					System.out.println("비겼습니다");
+				
+			}
+			else {
+				boolean win1=player.equals("가위")&&com.equals("보");
+				boolean win2=player.equals("바위")&&com.equals("가위");
+				boolean win3=player.equals("보")&&com.equals("바위");
+				
+				if(win1||win2||win3) {
+					System.out.println("플레이어 승!");
+					win++;
+				}
+				else {
+					System.out.println("졌습니다ㅠㅠ");
+					lose++;
+				}
+			}
+			
+			System.out.printf("현재 기록 : %d승 %d무 %d패\n\n",win, draw,lose);
+				
+		}
+	}
 }
