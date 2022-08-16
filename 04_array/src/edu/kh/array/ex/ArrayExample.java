@@ -53,7 +53,7 @@ public class ArrayExample {
 	public void ex2() {
 		
 		// int[]을 참조하는 변수 arr 선언
-		int[] arr;	// 배열 시작주소를 저장하는 변수 ( 참조형, 4byte)
+		int[] arr;	// 배열 시작주소를 저장하는 변수 ( 참조형, 4byte )
 		
 		arr=new int[4];
 		// heap 영역에 int 4칸짜리 배열을 할당(생성)하고
@@ -307,8 +307,6 @@ public class ArrayExample {
 			System.out.println(Arrays.toString(lotto));
 			
 		}
-		
-		
 		
 	}
 
