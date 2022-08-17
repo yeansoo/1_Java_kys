@@ -15,7 +15,10 @@ public class BasicRun {
 		//System.out.println("비밀번호 : "+ 김연수.password);
 		//The field KYS.password is not visible
 		
+		//비밀번호를 볼 수 있는 기능을 호출 == 간접접근방법
 		김연수.showPassword();
+		
+		
 		// 기능 수행
 		김연수.eat();
 		김연수.study();

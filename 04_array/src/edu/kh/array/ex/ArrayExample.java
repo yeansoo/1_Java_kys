@@ -111,8 +111,7 @@ public class ArrayExample {
 	}
 	
 	public void ex3() {
-		// 2) for문을 이용한 초기화
-		
+	
 		// 5명의 키(cm)를 입력 받고 평균 구하기
 		
 		 // 1번 키 입력 : 170.5
