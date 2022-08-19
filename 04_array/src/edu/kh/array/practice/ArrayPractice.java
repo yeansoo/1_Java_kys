@@ -241,11 +241,9 @@ public class ArrayPractice {
 		
 		String input=sc.next();
 		char[] arr=new char[input.length()];
-		char[] finalarr=new char[input.length()];
-		char temp;
 		
 		// 중복하면 안넣는다!
-	int num = 0;
+		int num = 0;
 		int tmp=0;
 		for(int i=0;i<arr.length;i++) {
 			num=i;
@@ -259,49 +257,53 @@ public class ArrayPractice {
 			}
 			
 		}//배열에 문자하나씩 넣음
-		
-		
-		
+
 		System.out.print("문자열에 있는 문자 : ");
-		System.out.println(Arrays.toString(arr));
-//		for(int i=0;i<arr.length;i++) {
-//			if(arr[i]) {
-//				System.out.print(arr[i]+" ");
-//				
-//			}
-//
-//		}
+		
+		for(int i=0;i<arr.length-1;i++) {
+			if(arr[i+1]!=0) {
+				System.out.print(arr[i]+", ");
+				
+			}
+			else
+				System.out.print(arr[i]+ "");
+		}
 		System.out.println("\n문자 개수 : "+num);
 			
 	}
 	
 	public void practice14(){
-//		Scanner sc = new Scanner(System.in);
-//		
-//		System.out.print("배열의 크기를 입력하세요 : ");
-//		int input=sc.nextInt();
-//		
-//		char more;
-//		String arr[]=new String[input];
-//		do {
-//			
-//			
-//			String tmp[]=new String[input+temp];
-//			
-//			for(int i=0;i<arr.length;i++) {
-//				System.out.print(i+1+"번째 문자열 : ");
-//				arr[i]=sc.next();
-//			}
-//			more=sc.next().charAt(0);
-//			if(more=='y') {
-//				System.out.println("더 입력하고 싶은 개수 : ");
-//				int temp=sc.nextInt();
-//				input+=temp;
-//				System.arraycopy(원본배열, 원본 복사 시작인덱스, 복사배열, 복사배열의 삽입 시작인덱스, 복사길이);
-//				
-//			}
-//		}while(more!='n');
+		Scanner sc = new Scanner(System.in);
 		
+		int add=0;
+		int num=1;
+		while(true) {
+			System.out.print("배열의 크기를 입력하세요 : ");
+			
+			int input=sc.nextInt();
+			
+			String arr[]=new String[input+add];
+			
+			for(int i=0;i<arr.length;i++) {
+				System.out.println(num++ + "번째 문자열 : ");
+				arr[i]=sc.next();
+			}
+			
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char yn=sc.next().charAt(0);
+			if(yn=='y') {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				add=sc.nextInt();
+				//깊은 복사로 하나 만들고
+				//위에서 또 복사
+				continue;
+			}
+			else {
+				System.out.println(Arrays.toString(arr));
+				break;
+			}
+				
+		}
 	}
 	
 	public void practice15(){
