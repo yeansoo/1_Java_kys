@@ -6,7 +6,7 @@ public class ArrayPracticeRun {
 		// TODO Auto-generated method stub
 			ArrayPractice ap=new ArrayPractice();
 			
-			ap.practice13();
+			ap.practice14();
 	}
 
 }

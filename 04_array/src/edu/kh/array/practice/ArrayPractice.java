@@ -272,34 +272,56 @@ public class ArrayPractice {
 			
 	}
 	
-	public void practice14(){
-		Scanner sc = new Scanner(System.in);
+	public void practice14(){		Scanner sc = new Scanner(System.in);
 		
 		int add=0;
 		int num=1;
-		while(true) {
+		
 			System.out.print("배열의 크기를 입력하세요 : ");
 			
-			int input=sc.nextInt();
+			int input=sc.nextInt();// 여기서 원본 배열의 크기가 결정됨
 			
+			int i=0;
+			
+			//String bigArr[]=new String[input+add];
+			
+			
+			String temp[]=new String[input+add];
 			String arr[]=new String[input+add];
 			
-			for(int i=0;i<arr.length;i++) {
-				System.out.println(num++ + "번째 문자열 : ");
+			for(;i<arr.length;i++) {// 원본
+				System.out.print(num++ + "번째 문자열 : ");
 				arr[i]=sc.next();
 			}
 			
+			while(true) {
+			
 			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
 			char yn=sc.next().charAt(0);
-			if(yn=='y') {
+			
+			if(yn=='y') {// 더 값을 입력한다면
 				System.out.print("더 입력하고 싶은 개수 : ");
 				add=sc.nextInt();
+					String bigArr[]=new String[input+add];
 				//깊은 복사로 하나 만들고
-				//위에서 또 복사
+				
+				
+				
+				
+				
+				System.arraycopy(arr, 0, bigArr, 0, arr.length);//원본을 여기 넣어줬지?
+				// 위에서 또 넣고 추가해야겠지?
+				
+				for(;i<bigArr.length;i++) {// 복사본에 추가
+					System.out.print(num++ + "번째 문자열 : ");
+					bigArr[i]=sc.next();
+					
+				}
+
 				continue;
 			}
 			else {
-				System.out.println(Arrays.toString(arr));
+				//System.out.println(Arrays.toString(bigArr));
 				break;
 			}
 				
