@@ -25,4 +25,8 @@ public class Truck extends Car {
 	public String toString() {
 		return super.toString() + "/ 적재중량 : "+weight;
 	}
+	
+	public void laoding() {
+		System.out.println("물건을 실을 수 있다.");
+	}
 }

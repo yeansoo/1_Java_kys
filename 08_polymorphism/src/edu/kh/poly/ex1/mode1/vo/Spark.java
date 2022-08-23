@@ -5,7 +5,7 @@ public class Spark extends Car {
 	
 	public Spark() {}
 
-	public Spark(int wheel, int seat, String fuel, double discount) {
+	public Spark(int wheel, int seat, String fuel, double discountOffer) {
 		super(wheel, seat, fuel);
 		this.discountOffer = discountOffer;
 	}
@@ -13,5 +13,9 @@ public class Spark extends Car {
 	@Override 
 	public String toString() {
 		return super.toString() + "/ 할인혜택 : "+discountOffer;
+	}
+	
+	public void dc() {
+		System.out.println(discountOffer*100+"% 할인됩니다.");
 	}
 }
