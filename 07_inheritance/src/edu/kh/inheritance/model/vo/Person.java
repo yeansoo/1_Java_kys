@@ -1,6 +1,8 @@
 package edu.kh.inheritance.model.vo;
 
-public class Person {
+import java.net.MulticastSocket;
+
+public class Person extends Object{
 
 	private String name;
 	private int age;
@@ -33,6 +35,12 @@ public class Person {
 	
 	public void setAge(int age) {
 		this.age=age;
+	}
+	
+	// 자기소개 기능
+	public void introduce() {
+		System.out.println("이름 : "+name);
+		System.out.println("나이 : "+age);
 	}
 	
 }
