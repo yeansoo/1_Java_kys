@@ -149,9 +149,16 @@ public class Example1 {
 	public void ex4() {
 		// instanceof 연산자 사용 시 검사 순서에 대한 문제점
 		
+		// - instanceof 연산자
+		// 1) 참조하는 객체의 타입을 검사하는 연산자
+		// 2) 참조하는 객체가 특정 타입을 상속 받았는지 검사
+		
 		Car c=new Spark();// 업캐스팅
 		
 		if(c instanceof Car) {// 참조하는 객체가 Car인 경우
+			// C가 참조하는 객체는 Spark이지만
+			// 업 캐스팅 상태이기 때문에 Car로도 인식됨(다형성)
+			
 			System.out.println("부모 Car타입 입니다.");
 		}else {// 참조하는 객체가 Spark인 경우
 			((Spark) c).dc();
