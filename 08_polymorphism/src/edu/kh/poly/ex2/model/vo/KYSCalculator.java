@@ -24,7 +24,7 @@ public class KYSCalculator implements Calculator{
 
 	@Override
 	public double areaOfCircle(double r) {
-		return r*r*PI;
+		return r*r*Calculator.PI;
 	}
 
 	@Override
