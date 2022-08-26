@@ -122,7 +122,7 @@ public class SetService {
 //		long 	-> Long
 //		short	-> Short
 //		double 	-> Double
-//		char	-> Char
+//		char	-> Character
 		
 		// Wrapper 클래스는 기본 자료형 값 + 추가 필드, 메서드 제공
 		
@@ -134,7 +134,21 @@ public class SetService {
 		// 문자열이지만 내용이 모두 숫자인 문자열이 존재
 		// -> Wrapper 클래스의 parseXXX() 를 이용하면 숫자로 변경 가능
 		
+		// parsing : 데이터의 형식 자체를 바꾸는 것
+		
 		System.out.println(num+111);
+		
+		// Auto Boxing(자동 포장)
+		Integer i1=10; // Integer=int
+						// Integer=new Integer(int) // 컴파일러가 바꿔줌
+		
+		// Auto UnBoxing(자동 포장 해제)
+		int i2=i1; // int=Integer
+					// int=Integer.intValue(); (int)
+		
+		System.out.println(i1.intValue());
+		
+		
 		
 		Set<Integer> lotto=new TreeSet<Integer>();
 		// Integer -> int의 Wrapper Class
