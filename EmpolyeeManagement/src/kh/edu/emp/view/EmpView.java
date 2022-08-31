@@ -1,5 +1,6 @@
 package kh.edu.emp.view;
 
+import java.util.List;
 import java.util.Scanner;
 
 import kh.edu.emp.model.service.EmpService;
@@ -39,6 +40,7 @@ public class EmpView {
 			case 8: selectSalSum(); break;
 			default: System.out.println("잘못 입력하셨습니다.");
 			}
+			System.out.println();
 			
 		}while(input!=0);
 		
@@ -65,25 +67,68 @@ public class EmpView {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	/**
+	 * 4. 사번이 일치하는 사원 정보 수정
+	 */
 	private void editempNum() {
-		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
 		
-	}
-
-	private void selectempNum() {
-		// TODO Auto-generated method stub
+		System.out.println("[사번이 일치하는 사원 정보 조회]");
 		
-	}
-
-	private void showEmp() {
-		System.out.println("[전체 사원 정보 조회]");
+		System.out.print("사번 입력 > ");
+		int input=sc.nextInt();
 		
-		service.showEmp();
+		System.out.print("이름 : ");
+		String empName=sc.next();
+		
+		System.out.print("이메일 : ");
+		String Email=sc.next();
+		
+		System.out.print("전화번호 : ");
+		String empPhone=sc.next();
+		
+		System.out.print("부서명 : ");
+		String depName=sc.next();
+		
+		System.out.print("직급명 : ");
+		String workName=sc.next();
+		
+		System.out.print("급여 : ");
+		int sal=sc.nextInt();
+		
+		
 	}
 
 	/**
-	 * 사원 추가
+	 * 3. 사번이 일치하는 사원 조회
+	 */
+	private void selectempNum() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("[사번이 일치하는 사원 정보 조회]");
+		
+		System.out.print("사번 입력 > ");
+		int input=sc.nextInt();
+		
+		System.out.print("");
+		service.selectempNum(input);
+	}
+
+	/**
+	 * 2. 전체 사원 정보 조회
+	 */
+	private void showEmp() {
+		System.out.println("[전체 사원 정보 조회]");
+		
+		List<Employee> empList=service.getEmpList();
+		
+		for(Employee e:empList)
+			System.out.println(e);
+	}
+
+	/**
+	 * 1. 사원 추가
 	 */
 	public void addEmp() {
 		Scanner sc = new Scanner(System.in);
