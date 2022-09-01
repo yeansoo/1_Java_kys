@@ -1,10 +1,23 @@
 package kh.edu.emp.view;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import kh.edu.emp.model.service.EmpService;
 import kh.edu.emp.model.vo.Employee;
+
+/*
+ * 	private int empId; // 사원 번호(사번)
+	private String empName; // 사원 이름
+	private String empNo; // 주민등록번호
+	private String email; // 이메일
+	private String phone; // 전화번호
+	private String departmentTitle; // 부서명
+	private String jobName; // 직급명
+	private int salary; // 급여
+	
+ */
 
 public class EmpView {
 
@@ -35,8 +48,8 @@ public class EmpView {
 			case 3: selectempNum(); break;
 			case 4: editempNum(); break;
 			case 5: delempNum(); break;
-			case 6: selectempDep(); break;
-			case 7: selectempSal(); break;
+			case 6: selectDep(); break;
+			case 7: selectOverSal(); break;
 			case 8: selectSalSum(); break;
 			default: System.out.println("잘못 입력하셨습니다.");
 			}
@@ -45,27 +58,32 @@ public class EmpView {
 		}while(input!=0);
 		
 	}
+	
+	// 프린트하는 구문을 새로 만들자!
 
-	private void selectSalSum() {
+	
+
+	
+
+	
+
+	/**
+	 * 5. 사번이 일치하는 사원 정보 삭제
+	 */
+	private void delempNum() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("");
+		System.out.println("[사번이 일치하는 사원 정보 삭제]");
 		
-	}
-
-	private void selectempSal() {
-		// TODO Auto-generated method stub
+		System.out.print("사번 입력 > ");
+		int input=sc.nextInt();
 		
-	}
-
-	private void delempNum() {
-		// TODO Auto-generated method stub
+		if(service.delEmpId(input)==null)
+			System.out.println("일치하는 사원이 없습니다");
+		else
+			System.out.println(service.delEmpId(input));
 		
-	}
-
-	private void selectempDep() {
-		// TODO Auto-generated method stub
-		
+		// 일치하는 사원이 있는경우 사원 리턴, 아닌경우 null 리턴
 	}
 	
 	/**
@@ -97,11 +115,14 @@ public class EmpView {
 		System.out.print("급여 : ");
 		int sal=sc.nextInt();
 		
+		service.editempNum(input,empName, Email,empPhone, depName, workName);
+		
 		
 	}
 
 	/**
-	 * 3. 사번이 일치하는 사원 조회
+	 * 3. 사번이 일치하는 사원 조회 
+	 * 사번이 일치하지 않는 경우 구현해야함
 	 */
 	private void selectempNum() {
 		Scanner sc = new Scanner(System.in);
@@ -123,8 +144,7 @@ public class EmpView {
 		
 		List<Employee> empList=service.getEmpList();
 		
-		for(Employee e:empList)
-			System.out.println(e);
+		service.printList(empList);
 	}
 
 	/**
@@ -165,4 +185,55 @@ public class EmpView {
 			System.out.println("사원 추가 실패");
 		}
 	}
+	
+	/**
+	 * 6. 입력 받은 부서와 일치 모든 사원 정보 조회
+	 */
+	private void selectDep() {
+		Scanner sc = new Scanner(System.in);
+		List<Employee> tmp=new ArrayList<Employee>();
+		System.out.println("[입력 받은 부서와 일치 모든 사원 정보 조회]");
+		
+		System.out.print("부서 입력 > ");
+		String input=sc.next();
+		
+		tmp=service.selectDep(input);
+		
+		if(tmp==null)
+			System.out.println("잘못된 입력입니다.");
+		else 
+			service.printList(tmp);
+	}
+	
+	/**
+	 * 7. 입력 받은 급여 이상을 받는 모든 사원 정보 조회
+	 */
+	private void selectOverSal() {
+		Scanner sc = new Scanner(System.in);
+		
+		List<Employee> tmp=new ArrayList<Employee>();
+		System.out.println("[입력 받은 급여 이상을 받는 모든 사원 정보 조회]");
+		
+		System.out.print("급여 입력 > ");
+		int input=sc.nextInt();
+		
+		tmp=service.selectOverSal(input);
+		
+		if(tmp==null) {
+			System.out.println("조회된 사원이 없습니다.");
+		}else
+			service.printList(tmp);
+	}
+	
+	/**
+	 * 8. 부서별 급여 합 전체 조회
+	 */
+	private void selectSalSum() {
+		
+		System.out.println("[부서별 급여 합 전체 조회]");
+				
+		service.selectSalSum();
+		
+	}
+	
 }
