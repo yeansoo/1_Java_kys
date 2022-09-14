@@ -91,18 +91,18 @@ public class EmpService {
 	/**
 	 * 5. 사번이 일치하는 사원 정보 삭제
 	 */
-	public Object delEmpId(int input) {
-		Employee tmp=new Employee(input, null, null, null, null, null, null, input);
-		for(Employee e: empList) {
-			if(e.getEmpId()==input) {
-				empList.remove();
-				return ;
-				
-			}
-			
-		}
-		return null;
-	}
+//	public Object delEmpId(int input) {
+//		Employee tmp=new Employee(input, null, null, null, null, null, null, input);
+//		for(Employee e: empList) {
+//			if(e.getEmpId()==input) {
+//				empList.remove();
+//				return ;
+//				
+//			}
+//			
+//		}
+//		return null;
+//	}
 
 	
 

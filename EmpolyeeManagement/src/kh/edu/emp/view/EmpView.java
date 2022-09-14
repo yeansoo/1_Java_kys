@@ -78,11 +78,11 @@ public class EmpView {
 		System.out.print("사번 입력 > ");
 		int input=sc.nextInt();
 		
-		if(service.delEmpId(input)==null)
-			System.out.println("일치하는 사원이 없습니다");
-		else
-			System.out.println(service.delEmpId(input));
-		
+//		if(service.delEmpId(input)==null)
+//			System.out.println("일치하는 사원이 없습니다");
+//		else
+//			System.out.println(service.delEmpId(input));
+//		
 		// 일치하는 사원이 있는경우 사원 리턴, 아닌경우 null 리턴
 	}
 	
